@@ -21,55 +21,25 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
 
-        ArrayList<String> words = new ArrayList<String>();
-        words.add("One");
-        words.add("Two");
-        words.add("Three");
-        words.add("Four");
-        words.add("Five");
-        words.add("Six");
-        words.add("Seven");
-        words.add("Eight");
-        words.add("Nine");
-        words.add("Ten");
-// 2
-        words.add("One");
-        words.add("Two");
-        words.add("Three");
-        words.add("Four");
-        words.add("Five");
-        words.add("Six");
-        words.add("Seven");
-        words.add("Eight");
-        words.add("Nine");
-        words.add("Ten");
-//        3
-        words.add("One");
-        words.add("Two");
-        words.add("Three");
-        words.add("Four");
-        words.add("Five");
-        words.add("Six");
-        words.add("Seven");
-        words.add("Eight");
-        words.add("Nine");
-        words.add("Ten");
-//        4
-        words.add("One");
-        words.add("Two");
-        words.add("Three");
-        words.add("Four");
-        words.add("Five");
-        words.add("Six");
-        words.add("Seven");
-        words.add("Eight");
-        words.add("Nine");
-        words.add("Ten");
+        ArrayList<word> words = new ArrayList<word>();
 
-        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, words);
+        words.add(new word("one","Ek"));
+        words.add(new word("Two","Doo"));
+        words.add(new word("Three","Teen"));
+        words.add(new word("Four","Char"));
+        words.add(new word("Five","Panch"));
+        words.add(new word("Six","Chhah"));
+        words.add(new word("Seven","Saat"));
+        words.add(new word("Eight","aath"));
+        words.add(new word("Nine","Nauu"));
+        words.add(new word("Ten","Das"));
+        words.add(new word("Eleven","Gyarah"));
+
+
+        WordAdapter adapter = new WordAdapter(this, words);
 
         ListView listView = (ListView) findViewById(R.id.list);
 
-        listView.setAdapter(itemsAdapter);
+        listView.setAdapter(adapter);
     }
 }
